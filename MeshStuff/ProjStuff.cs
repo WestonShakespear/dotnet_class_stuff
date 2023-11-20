@@ -23,6 +23,8 @@ namespace Test
 
         public static string Filename = "";
 
+        public static float rotation = 30.0f;
+
         public static void Generate(string _filename)
         {
             shapes = new List<Shape>();
@@ -63,7 +65,7 @@ namespace Test
             List<Vector3[]> tris3 = GetFlatTriangles(tri1.GetTriangles());
 
 
-            float rotation = 30.0f;
+            
             Vector3 trans = new Vector3(-0.6f, 0.0f, 0.6f);
 
 

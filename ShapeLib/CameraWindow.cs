@@ -24,7 +24,7 @@ namespace TestWindow
         Camera camera;
         public float StartZ = 2f;
 
-        private OpenTK.Mathematics.Vector2 ModelRotation = new OpenTK.Mathematics.Vector2(0.0f, 0.0f);
+        public OpenTK.Mathematics.Vector2 ModelRotation = new OpenTK.Mathematics.Vector2(0.0f, 0.0f);
 
         bool MiddleMouse = false;
         private bool _firstMove = true;
@@ -53,6 +53,7 @@ namespace TestWindow
 
             this.MyLogic = logic;
             this.MyLogic.SetCamera(ref camera);
+            this.MyLogic.SetRotation(ref ModelRotation);
             this.MyLogic.Size = new System.Numerics.Vector2(Size.X, Size.Y);
 
         }

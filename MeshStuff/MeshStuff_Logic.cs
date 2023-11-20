@@ -19,6 +19,10 @@ namespace Test
         int ShaderHandle;
 
         bool StartOfLine = true;
+
+        bool Constrict = true;
+
+        OpenTK.Mathematics.Vector2 ModelRotation = new OpenTK.Mathematics.Vector2(0.0f);
         
         public MeshStuff_Logic()
         {
@@ -79,6 +83,17 @@ namespace Test
                 mod = true;
             }
 
+            if (key.IsKeyPressed(Keys.KeyPad0))
+            {
+                Constrict = !Constrict;
+                this.ModelRotation = (0.0f, -1 * ProjStuff.rotation);
+            }
+            if (key.IsKeyPressed(Keys.KeyPadDecimal))
+            {
+                Constrict = !Constrict;
+                this.ModelRotation = (0.0f, ProjStuff.rotation);
+            }
+
             if (mod)
             {
                 ProjStuff.Generate(ProjStuff.Filename);
@@ -99,6 +114,12 @@ namespace Test
 
             float x_rotation = MathHelper.DegreesToRadians(modelRotation.X);
             float y_rotation = MathHelper.DegreesToRadians(modelRotation.Y);
+
+            if (Constrict)
+            {
+                x_rotation = MathHelper.DegreesToRadians(ModelRotation.X);
+                y_rotation = MathHelper.DegreesToRadians(ModelRotation.Y);
+            }
 
             Matrix4 model = Matrix4.CreateRotationX(x_rotation);
             model *= Matrix4.CreateRotationY(y_rotation);
