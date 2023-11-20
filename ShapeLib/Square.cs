@@ -9,14 +9,14 @@ namespace ShapeLib
 
         public Square()
         {
-            base.Origin = new Vector2(0.0f, 0.0f);
+            base.Origin = new Vector3(0.0f, 0.0f, 0.0f);
             this.Size = new Vector2(1.0f, 1.0f);
 
             this.Draw(gl:false);
         }
         public Square(Vector2 _origin, Vector2 _size)
         {
-            base.Origin = _origin;
+            base.Origin = new Vector3(_origin.X, _origin.Y, 0.0f);
             this.Size = _size;
 
             this.Draw(gl:false);

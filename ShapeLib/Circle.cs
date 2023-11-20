@@ -9,13 +9,22 @@ namespace ShapeLib
 
         public Circle()
         {
-            base.Origin = new Vector2(0.0f, 0.0f);
+            base.Origin = new Vector3(0.0f, 0.0f, 0.0f);
             this.Radius = 0.5f;
             this.Segments = 16;
 
             this.Draw(gl:false);
         }
         public Circle(Vector2 _origin, float _radius, int _segments = 16)
+        {
+            base.Origin = new Vector3(_origin.X, _origin.Y, 0.0f);
+            this.Radius = _radius;
+            this.Segments = _segments;
+
+            this.Draw(gl:false);
+        }
+
+        public Circle(Vector3 _origin, float _radius, int _segments = 16)
         {
             base.Origin = _origin;
             this.Radius = _radius;
@@ -32,7 +41,7 @@ namespace ShapeLib
             base.Vertices = new float[12 + (3 * this.Segments)];
             base.Vertices[0] = base.Origin.X;
             base.Vertices[1] = base.Origin.Y;
-            base.Vertices[2] = 0.0f;
+            base.Vertices[2] = base.Origin.Z;
 
             base.Triangles = new uint[3 + (3 * this.Segments)];
 
@@ -40,7 +49,7 @@ namespace ShapeLib
             {
                 base.Vertices[3 * (i + 1)] =     base.Origin.X + (this.Radius * (float)Math.Cos(angle * i));//x);
                 base.Vertices[3 * (i + 1) + 1] = base.Origin.Y + (this.Radius * (float)Math.Sin(angle * i)); //y;
-                base.Vertices[3 * (i + 1) + 2] = 0.0f;                       //z;
+                base.Vertices[3 * (i + 1) + 2] = base.Origin.Z;                       //z;
 
                 base.Triangles[3 * i] =      0;
                 base.Triangles[3 * i + 1] =  (uint)(i + 1);

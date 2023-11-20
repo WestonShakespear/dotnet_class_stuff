@@ -1,4 +1,5 @@
 
+using System.Numerics;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Windowing.Common;
@@ -25,6 +26,7 @@ namespace TestWindow
             })
         {
             this.MyLogic = logic;
+            this.MyLogic.Size = new Vector2(Size.X, Size.Y);
         }
 
         
@@ -49,7 +51,7 @@ namespace TestWindow
             // Clear the screen
             GL.Clear(ClearBufferMask.ColorBufferBit);
 
-            MyLogic.OnRenderFrame(args);
+            MyLogic.OnRenderFrame(args, new WS_ENGINE_BASE.Camera(new OpenTK.Mathematics.Vector3(0.0f, 0.0f, 0.0f), 0.0f), new OpenTK.Mathematics.Vector2(0.0f));
 
             // Do this last to display the changes
             Context.SwapBuffers();
@@ -84,6 +86,7 @@ namespace TestWindow
 
             // Resize the gl viewport when the window is resized
             GL.Viewport(0, 0, e.Width, e.Height);
+            this.MyLogic.Size = new Vector2(e.Width, e.Height);
 
             MyLogic.OnResize();
         }

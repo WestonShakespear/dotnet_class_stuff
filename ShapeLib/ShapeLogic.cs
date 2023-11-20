@@ -5,6 +5,8 @@ using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 using ShapeLib;
 using System.Numerics;
+using OpenTK.Mathematics;
+using WS_ENGINE_BASE;
 
 namespace Window
 {
@@ -15,29 +17,77 @@ namespace Window
 
         int ShaderHandle;
 
-        public ShapeLogic(List<Shape> _shapes, Vector2 Size)
+        bool StartOfLine = true;
+        
+
+        public ShapeLogic(List<Shape> _shapes)
         {
             this.Shapes = _shapes;
         }
 
         public override void OnUpdateFrame(FrameEventArgs args, KeyboardState key, MouseState mouse)
         {
-            if (mouse.IsButtonPressed(MouseButton.Left))
-            {
-                Console.Write("Mouse pressed");
-                Console.Write("    X: {0}", mouse.Position.X);
-                Console.Write("    Y: {0}", mouse.Position.Y);
-                float norm_x = (mouse.Position.X / ;
-                float norm_y = mouse.Position.Y;
+            return;
+            // float norm_x = (mouse.Position.X / base.Size.X * 2) - 1.0f;
+            // float norm_y = (mouse.Position.Y / base.Size.X * 2) - 1.0f;
+            // norm_y *= -1.0f;
 
-                Shapes.Add(new Circle(new Vector2(norm_x, norm_y), 0.05f));
-            }
+            // if (!this.StartOfLine)
+            // {
+                
+            //     if (this.Shapes.ElementAt(this.Shapes.Count-1).GetType() == typeof(Line))
+            //     {
+                  
+            //         ((Line)this.Shapes.ElementAt(this.Shapes.Count-1)).SetPointB(new Vector2(norm_x, norm_y));
+            //         ((Line)this.Shapes.ElementAt(this.Shapes.Count-1)).Draw(force:true);
+            //     }
+            // }
+
+
+            // if (mouse.IsButtonPressed(MouseButton.Left))
+            // {
+            //     Circle c = new Circle(new Vector2(norm_x, norm_y), 0.03f);
+            //     c.Wireframe = true;
+            //     Shapes.Add(c);
+                
+            //     if (this.StartOfLine)
+            //     {
+            //         Console.WriteLine("Start");
+            //         this.StartOfLine = false;
+            //         Line l1 = new Line(
+            //             new Vector2(norm_x, norm_y), 
+            //             new Vector2(norm_x, norm_y),
+            //             new Vector2(norm_x+0.0001f, norm_y+0.0001f), 0.01f
+            //         );
+            //         l1.Wireframe = true;
+            //         this.Shapes.Add(l1);
+            //     }
+            //     else
+            //     {
+            //         Console.WriteLine("End");
+            //         this.StartOfLine = true;
+            //     }
+                    
+            // }
+            
         }
 
-        public override void OnRenderFrame(FrameEventArgs args)
+        public override void OnRenderFrame(FrameEventArgs args, Camera camera, OpenTK.Mathematics.Vector2 modelRotation)
         {
             // Use the shader
             GL.UseProgram(this.ShaderHandle);
+
+            float x_rotation = MathHelper.DegreesToRadians(modelRotation.X);
+            float y_rotation = MathHelper.DegreesToRadians(modelRotation.Y);
+
+            Matrix4 model = Matrix4.CreateRotationX(x_rotation);
+            model *= Matrix4.CreateRotationY(y_rotation);
+
+
+            this.SetMatrix4("model", model);
+            this.SetMatrix4("view", camera.GetViewMatrix());
+            this.SetMatrix4("projection", camera.GetProjectionMatrix());
+          
 
             foreach(Shape shape in Shapes)
             {
@@ -46,6 +96,20 @@ namespace Window
             // // Set wireframe
             // GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
 
+        }
+
+        private Dictionary<string, int>? _uniformLocations;
+
+        public void SetMatrix4(string name, Matrix4 data)
+        {
+            if (_uniformLocations != null)
+            {
+                if (_uniformLocations.ContainsKey(name))
+                {
+                    GL.UseProgram(ShaderHandle);
+                GL.UniformMatrix4(_uniformLocations[name], true, ref data);
+                }
+            }
         }
         
         public override void OnLoad()
@@ -130,16 +194,44 @@ namespace Window
             GL.DetachShader(this.ShaderHandle, FragShader);
             GL.DeleteShader(VertShader);
             GL.DeleteShader(FragShader);
+
+             GL.GetProgram(ShaderHandle, GetProgramParameterName.ActiveUniforms, out var numberOfUniforms);
+
+            // Next, allocate the dictionary to hold the locations.
+            _uniformLocations = new Dictionary<string, int>();
+
+            // Loop over all the uniforms,
+            for (var i = 0; i < numberOfUniforms; i++)
+            {
+                // get the name of this uniform,
+                var key = GL.GetActiveUniform(ShaderHandle, i, out _, out _);
+
+                // get the location,
+                var location = GL.GetUniformLocation(ShaderHandle, key);
+
+                // and then add it to the dictionary.
+                _uniformLocations.Add(key, location);
+            }
         }
 
         static string vert = 
         """
             #version 330 core
             layout (location = 0) in vec3 aPosition;
+            layout(location = 1) in vec2 aTexCoord;
+
+            out vec2 texCoord;
+
+
+            uniform mat4 model;
+            uniform mat4 view;
+            uniform mat4 projection;
 
             void main()
             {
-                gl_Position = vec4(aPosition.x, aPosition.y, aPosition.z, 1.0);
+                texCoord = aTexCoord;
+
+                gl_Position = vec4(aPosition, 1.0) * model * view * projection;
             }
         """;
 

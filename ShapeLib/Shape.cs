@@ -1,16 +1,13 @@
-
 using System.Numerics;
 using OpenTK.Graphics.OpenGL4;
-using OpenTK.Windowing.Common;
-using OpenTK.Windowing.Desktop;
-using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace ShapeLib
 {
     public class Shape
     {
-        protected Vector2 Origin;
-        protected Vector4 Color;
+        protected Vector3 Origin = new Vector3(0.0f, 0.0f, 0.0f);
+        protected Vector3 Rotation = new Vector3(0.0f, 0.0f, 0.0f);
+        protected Vector4 Color = new Vector4(1.0f, 0.0f, 0.0f, 1.0f);
         protected uint[]? Triangles;
         protected float[]? Vertices;
 
@@ -21,18 +18,17 @@ namespace ShapeLib
         public int VertexArrayObject;
 
         public bool Wireframe = false;
-
+        public bool Display = true;
+        
         protected bool Drawn;
+
 
         public Shape()
         {
-            this.Origin = new Vector2(0.0f, 0.0f);
-            this.Color = new Vector4(0.0f, 0.0f, 1.0f, 1.0f);
         }
         public Shape(Vector2 _origin)
         {
-            this.Origin = _origin;
-            this.Color = new Vector4(0.0f, 0.0f, 1.0f, 1.0f);
+            this.Origin = new Vector3(_origin.X, _origin.Y, 0.0f);
         }
 
         public virtual void Draw(bool force = false, bool gl = true)
@@ -68,6 +64,8 @@ namespace ShapeLib
 
         public virtual void Render(int shader_handle)
         {
+            if (!this.Display) return;
+
             if (this.Wireframe)
             {
                 GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
@@ -84,21 +82,6 @@ namespace ShapeLib
   
         }
 
-        public void Move(Vector2 distance)
-        {
-            this.Origin += distance;
-        }
-
-        
-        public Vector2 GetOrigin()
-        {
-            return this.Origin;
-        }
-        public void SetOrigin(Vector2 _origin)
-        {
-            this.Origin = _origin;
-        }
-
         public Vector4 GetColor()
         {
             return this.Color;
@@ -106,6 +89,15 @@ namespace ShapeLib
         public void SetColor(Vector4 _color)
         {
             this.Color = _color;
+        }
+
+        public virtual void Move(Vector3 _distance)
+        {
+            this.Origin += _distance;
+        }
+        public virtual void Rotate(Vector3 _rotation)
+        {
+            this.Rotation += _rotation;
         }
 
     }
