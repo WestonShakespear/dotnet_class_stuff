@@ -12,11 +12,11 @@ namespace Test
         public static void Main(string[] args)
         {
             
-           ProjStuff.Generate("simple_noise.obj");
+           ProjStuff.Generate("wave_complex.obj");
 
             using (
                 TestWindow.CameraWindow game = new TestWindow.CameraWindow(
-                    1000, 1000, "HelloTriangle",
+                    2000, 2000, "HelloTriangle",
                     new MeshStuff_Logic())
                 )
             {

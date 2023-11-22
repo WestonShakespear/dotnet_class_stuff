@@ -10,17 +10,10 @@ namespace Window
         public Vector2 Size = new Vector2(0.0f, 0.0f);
 
         public Camera? camera;
-        public OpenTK.Mathematics.Vector2 Rotation;
 
         public void SetCamera(ref Camera _camera)
         {
             this.camera = _camera;
-        }
-
-        
-        public void SetRotation(ref OpenTK.Mathematics.Vector2 _rotation)
-        {
-            this.Rotation = _rotation;
         }
 
         public virtual void OnUpdateFrame(FrameEventArgs args, KeyboardState key, MouseState mouse)
