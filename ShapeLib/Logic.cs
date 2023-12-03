@@ -15,6 +15,10 @@ namespace Window
         {
             this.camera = _camera;
         }
+        public void SetRotation(ref OpenTK.Mathematics.Vector2 _rotation)
+        {
+            // this.camera = _camera;
+        }
 
         public virtual void OnUpdateFrame(FrameEventArgs args, KeyboardState key, MouseState mouse)
         {

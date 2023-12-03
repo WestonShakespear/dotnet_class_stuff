@@ -1,0 +1,15 @@
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.csproj.AssemblyReference.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.AssemblyInfoInputs.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.AssemblyInfo.cs
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.csproj.CoreCompileInputs.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\bin\Debug\net7.0\WindowLogic.deps.json
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\bin\Debug\net7.0\WindowLogic.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\bin\Debug\net7.0\WindowLogic.pdb
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\bin\Debug\net7.0\OpenTK_Builtin.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\bin\Debug\net7.0\OpenTK_Builtin.pdb
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.csproj.CopyComplete
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\refint\WindowLogic.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\WindowLogic.pdb
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\WindowLogic\obj\Debug\net7.0\ref\WindowLogic.dll

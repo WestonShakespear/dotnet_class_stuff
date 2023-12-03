@@ -53,7 +53,7 @@ namespace TestWindow
 
             this.MyLogic = logic;
             this.MyLogic.SetCamera(ref camera);
-            this.MyLogic.SetRotation(ref ModelRotation);
+            // this.MyLogic.SetRotation(ref ModelRotation);
             this.MyLogic.Size = new System.Numerics.Vector2(Size.X, Size.Y);
 
         }

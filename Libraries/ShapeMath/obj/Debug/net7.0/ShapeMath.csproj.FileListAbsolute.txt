@@ -1,0 +1,12 @@
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ShapeMath.csproj.AssemblyReference.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ShapeMath.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ShapeMath.AssemblyInfoInputs.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ShapeMath.AssemblyInfo.cs
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ShapeMath.csproj.CoreCompileInputs.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\bin\Debug\net7.0\ShapeMath.deps.json
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\bin\Debug\net7.0\ShapeMath.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\bin\Debug\net7.0\ShapeMath.pdb
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ShapeMath.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\refint\ShapeMath.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ShapeMath.pdb
+C:\Users\wes\github-repos\dotnet_class_stuff\Libraries\ShapeMath\obj\Debug\net7.0\ref\ShapeMath.dll
