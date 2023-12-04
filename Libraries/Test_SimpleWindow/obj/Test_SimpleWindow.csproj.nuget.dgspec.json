@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj": {}
+    "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj": {
+    "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\SimpleWindow\\SimpleWindow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj",
-        "projectName": "Test_SimpleWindow",
-        "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj",
-        "packagesPath": "C:\\Users\\wes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\obj\\",
+        "projectUniqueName": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\SimpleWindow\\SimpleWindow.csproj",
+        "projectName": "SimpleWindow",
+        "projectPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\SimpleWindow\\SimpleWindow.csproj",
+        "packagesPath": "C:\\Users\\Initec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\SimpleWindow\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Software\\VS\\SDK\\NuGetPackages"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\wes\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Initec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -59,7 +59,70 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj",
+        "projectName": "Test_SimpleWindow",
+        "projectPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj",
+        "packagesPath": "C:\\Users\\Initec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Initec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\SimpleWindow\\SimpleWindow.csproj": {
+                "projectPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\SimpleWindow\\SimpleWindow.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

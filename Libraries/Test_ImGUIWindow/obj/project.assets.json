@@ -1,32 +1,51 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "ImGUIWindow/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ImGUIWindow.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImGUIWindow.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ImGUIWindow/1.0.0": {
+      "type": "project",
+      "path": "../ImGUIWindow/ImGUIWindow.csproj",
+      "msbuildProject": "../ImGUIWindow/ImGUIWindow.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "ImGUIWindow >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\wes\\.nuget\\packages\\": {},
-    "D:\\Software\\VS\\SDK\\NuGetPackages": {}
+    "C:\\Users\\Initec\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_ImGUIWindow\\Test_ImGUIWindow.csproj",
+      "projectUniqueName": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_ImGUIWindow\\Test_ImGUIWindow.csproj",
       "projectName": "Test_ImGUIWindow",
-      "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_ImGUIWindow\\Test_ImGUIWindow.csproj",
-      "packagesPath": "C:\\Users\\wes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_ImGUIWindow\\obj\\",
+      "projectPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_ImGUIWindow\\Test_ImGUIWindow.csproj",
+      "packagesPath": "C:\\Users\\Initec\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_ImGUIWindow\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Software\\VS\\SDK\\NuGetPackages"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\wes\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Initec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -38,7 +57,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\ImGUIWindow\\ImGUIWindow.csproj": {
+              "projectPath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\ImGUIWindow\\ImGUIWindow.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -66,7 +89,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

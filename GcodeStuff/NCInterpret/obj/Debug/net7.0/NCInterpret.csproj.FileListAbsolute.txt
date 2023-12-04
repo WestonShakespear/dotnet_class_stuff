@@ -1,0 +1,12 @@
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\bin\Debug\net7.0\NCInterpret.deps.json
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\bin\Debug\net7.0\NCInterpret.dll
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\bin\Debug\net7.0\NCInterpret.pdb
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\NCInterpret.csproj.AssemblyReference.cache
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\NCInterpret.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\NCInterpret.AssemblyInfoInputs.cache
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\NCInterpret.AssemblyInfo.cs
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\NCInterpret.csproj.CoreCompileInputs.cache
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\NCInterpret.dll
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\refint\NCInterpret.dll
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\NCInterpret.pdb
+C:\Users\Initec\Documents\Personal\dotnet_class_stuff\GcodeStuff\NCInterpret\obj\Debug\net7.0\ref\NCInterpret.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NNAuGYNGu3u9R6Uw81wFkIRS7bvjo9EgGYPW6MCtA5Y81psZwYVtA5ELvcyywv1szntdAnH72ioecnKXEuhs1A==",
+  "dgSpecHash": "VtSrXncn3NvSl6r9ZnprkTgjRng+rYhrSU/yC/i8EwBe/+yzMwFM1JQA7pPliugLWP3a8aJeT0uFrJFaSNvx1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj",
+  "projectFilePath": "C:\\Users\\Initec\\Documents\\Personal\\dotnet_class_stuff\\Libraries\\Test_SimpleWindow\\Test_SimpleWindow.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
