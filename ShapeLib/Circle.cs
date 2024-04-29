@@ -58,7 +58,7 @@ namespace ShapeLib
             }
             base.DrawLength = Triangles.Length - 3;
             
-            if (gl) base.Draw();
+            if (gl) base.Draw(force:force, gl:gl);
         }
 
         public override void Render(int shader_handle)

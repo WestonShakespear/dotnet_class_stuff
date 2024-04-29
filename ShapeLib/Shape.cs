@@ -36,6 +36,14 @@ namespace ShapeLib
             if (!force && this.Drawn)   return;
             if (this.Triangles is not null && this.Vertices is not null)
             {
+                // for (int i = 0; i < this.Vertices.Length; i++)
+                // {
+                //     Console.Write("{0},", this.Vertices[i]);
+                //     if (i % 3 == 0) Console.WriteLine();
+                // }
+
+                // Console.WriteLine();
+                
 
                 this.VertexArrayObject = GL.GenVertexArray();
                 GL.BindVertexArray(this.VertexArrayObject);
@@ -59,7 +67,7 @@ namespace ShapeLib
                 GL.BufferData(BufferTarget.ElementArrayBuffer, Triangles.Length * sizeof(uint), Triangles, BufferUsageHint.StaticDraw);
 
                 this.Drawn = true;
-            }
+            } else { Console.WriteLine("nulll"); }
         }
 
         public virtual void Render(int shader_handle)
@@ -95,6 +103,11 @@ namespace ShapeLib
         {
             this.Origin += _distance;
         }
+        public virtual void SetOrigin(Vector3 _origin)
+        {
+            this.Origin = _origin;
+        }
+        public virtual Vector3 GetOrigin() { return Origin; }
         public virtual void Rotate(Vector3 _rotation)
         {
             this.Rotation += _rotation;

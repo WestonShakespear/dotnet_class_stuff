@@ -12,7 +12,7 @@ namespace Test
             var objLoaderFactory = new ObjLoaderFactory();
             var objLoader = objLoaderFactory.Create();
 
-            var fileStream = File.OpenRead("wave_complex.obj");
+            var fileStream = File.OpenRead("motor.obj");
             var result = objLoader.Load(fileStream);
 
             Console.WriteLine("");

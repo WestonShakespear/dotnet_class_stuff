@@ -22,7 +22,7 @@ namespace TestWindow
 
 
         Camera camera;
-        public float StartZ = 2f;
+        public float StartZ = 1.15f;
 
         public OpenTK.Mathematics.Vector2 ModelRotation = new OpenTK.Mathematics.Vector2(0.0f, 0.0f);
 
