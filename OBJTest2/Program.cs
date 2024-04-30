@@ -24,38 +24,41 @@ namespace Test
 
             List<Vector4> inputs = new List<Vector4>()
             {
-                // Quadrant 1
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
+                // Quadrant 1 ++
+                new Vector4( 1.0f, -2.0f,  2.0f,  2.0f),//**
+                new Vector4( 4.0f, -2.0f,  2.0f,  2.0f),
+                new Vector4( 6.0f,  1.0f,  2.0f,  2.0f),
+                new Vector4( 6.0f,  4.0f,  2.0f,  2.0f),
+                new Vector4(-1.0f,  6.0f,  2.0f,  2.0f),
+                new Vector4(-2.0f,  1.0f,  2.0f,  2.0f),
 
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
+                // Quadrant 2 -+
+                new Vector4(-1.0f, -2.0f, -2.0f,  2.0f),//**
+                new Vector4(-4.0f, -2.0f, -2.0f,  2.0f),
+                new Vector4(-6.0f,  1.0f, -2.0f,  2.0f),
+                new Vector4(-6.0f,  4.0f, -2.0f,  2.0f),
+                new Vector4( 1.0f,  6.0f, -2.0f,  2.0f),
+                new Vector4( 2.0f,  1.0f, -2.0f,  2.0f),
 
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
+                // Quadrant 3 --
+                new Vector4(-1.0f,  2.0f, -2.0f, -2.0f),//**
+                new Vector4(-4.0f,  2.0f, -2.0f, -2.0f),
+                new Vector4(-6.0f, -1.0f, -2.0f, -2.0f),
+                new Vector4(-6.0f, -4.0f, -2.0f, -2.0f),
+                new Vector4( 1.0f, -6.0f, -2.0f, -2.0f),
+                new Vector4( 2.0f, -1.0f, -2.0f, -2.0f),
 
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
-                new Vector4(4.0f, -2.0f, 2.0f, 2.0f),
+                // Quadrant 4 +-
+                new Vector4( 1.0f,  2.0f,  2.0f, -2.0f),//**
+                new Vector4( 4.0f,  2.0f,  2.0f, -2.0f),
+                new Vector4( 6.0f, -1.0f,  2.0f, -2.0f),
+                new Vector4( 6.0f, -4.0f,  2.0f, -2.0f),
+                new Vector4(-1.0f, -6.0f,  2.0f, -2.0f),
+                new Vector4(-2.0f, -1.0f,  2.0f, -2.0f),
             };
 
             int col = 6;
-            float spacing = 8.0f;
+            float spacing = 20.0f;
 
             float originHome = -1 * (float)(col/2) * spacing;
 
@@ -70,7 +73,7 @@ namespace Test
 
                 origin.X += spacing;
 
-                if (c++ % col == 0) { origin.X = originHome; origin.Y -= spacing*1.5f; }
+                if (c++ % col == 0) { origin.X = originHome; origin.Y -= spacing*1.5f; Console.WriteLine();}
             }
 
            
@@ -104,7 +107,7 @@ namespace Test
         public static void Arc(Vector2 initialP, Vector2 commandP, float I, float J, Vector2 origin, ref List<Shape> shapes)
         {
             float scale = 20.0f;
-            float seg = 32;
+            int seg = 5;
 
             float pSize = 0.025f * 10.0f;
             float aSize = 0.01f * 10.0f;
@@ -137,15 +140,28 @@ namespace Test
 
             float N = (float) (-1 * M + Math.Atan( (commandP.Y - radiusP.Y) / (commandP.X - radiusP.X) ));
 
-            if (commandP.X < initialP.X)
+            if (commandP.X < radiusP.X)
             {
                 N += (float) Math.PI; 
             }
 
+            float fullC = (float) (2 * Math.PI);
+
+            while (M < 0) M += fullC;
+            while (M > 2 * Math.PI) M -= fullC;
+
+            while (N < 0) N += fullC;
+            while (N > 2 * Math.PI) N -= fullC;
+
+            
+
+          
 
             endP.X = (float) (radiusP.X + radius * Math.Cos(M + N));
             endP.Y = (float) (radiusP.Y + radius * Math.Sin(M + N));
 
+            // Console.WriteLine("M:{0}\t{1}    N:{2}\t{3}", M, N, M*180/Math.PI, N*180/Math.PI);
+            
 
             float start = 0.0f;
             float end = N;

@@ -115,7 +115,7 @@ namespace Test
             
             // c.Render(this.ShaderHandle);
             // // Set wireframe
-            // GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+            // GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.w);
 
         }
 
