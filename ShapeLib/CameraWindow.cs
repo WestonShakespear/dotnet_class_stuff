@@ -37,7 +37,7 @@ namespace TestWindow
         const float sensitivity = 0.2f;
         
 
-        public CameraWindow(int width, int height, string title, Logic logic) : base(
+        public CameraWindow(int width, int height, string title, Logic logic, int monitor = 0, bool fullscreen = false) : base(
             GameWindowSettings.Default,
             new NativeWindowSettings()
             {
@@ -56,6 +56,8 @@ namespace TestWindow
             // this.MyLogic.SetRotation(ref ModelRotation);
             this.MyLogic.Size = new System.Numerics.Vector2(Size.X, Size.Y);
 
+            if (fullscreen) this.WindowState = WindowState.Fullscreen;
+
         }
 
         
@@ -65,7 +67,7 @@ namespace TestWindow
             base.OnLoad();
 
             // Set the clear color for refreshing
-            GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            GL.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
             
             MyLogic.OnLoad();
