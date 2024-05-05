@@ -118,8 +118,8 @@ namespace TestWindow
                 this.ModelRotation = new OpenTK.Mathematics.Vector2(0.0f, 0.0f);
             }
 
-            bool rotate = mouse[MouseButton.Middle] && !key.IsKeyDown(Keys.LeftControl);
-            bool pan = mouse[MouseButton.Middle] && key.IsKeyDown(Keys.LeftControl);
+            bool rotate = mouse[MouseButton.Middle] && !key.IsKeyDown(Keys.LeftShift);
+            bool pan = mouse[MouseButton.Middle] && key.IsKeyDown(Keys.LeftShift);
 
             if (pan)
             {

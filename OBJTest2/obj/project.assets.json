@@ -5040,8 +5040,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\ShapeLib\\ShapeLib.csproj": {
-              "projectPath": "C:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\ShapeLib\\ShapeLib.csproj"
+            "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\ShapeLib\\ShapeLib.csproj": {
+              "projectPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\ShapeLib\\ShapeLib.csproj"
             }
           }
         }
