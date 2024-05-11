@@ -7,22 +7,19 @@ namespace WSGraphics.Window;
 public class ViewLogic
 {
     public Vector2 Size;
-    public virtual void OnUpdateFrame(
+    public virtual void DoUpdateFrame(
         FrameEventArgs args, 
         KeyboardState key, 
         MouseState mouse) {}
 
-    public virtual void OnRenderFrame(
+    public virtual void DoRenderFrame(
         FrameEventArgs args,
         Camera? camera,
         OpenTK.Mathematics.Vector2? modelRotation) {}
 
-    public virtual void OnLoad() {}
+    public virtual void DoLoad() {}
 
-    public virtual void OnUnload() {}
+    public virtual void DoUnload() {}
 
-    public virtual void OnResize(ResizeEventArgs e)
-    {
-        Size = new Vector2(e.Width, e.Height);
-    }
+    public virtual void DoResize(ResizeEventArgs e) {}
 }

@@ -1,6 +1,9 @@
 ﻿using System.Numerics;
+
 using WSGraphics.Window;
 using static WSGraphics.Window.Common;
+using WSGraphics.Graphics;
+
 
 namespace Program;
 
@@ -8,16 +11,40 @@ class Program
 {
     public static void Main(string[] args)
     {
-        WindowInitSettings win = new WindowInitSettings(
-            new Vector2(1000, 1000),
-            "Test 1 WSGraphics",
-            new TestLogic()
-        );
+        bool DoGUI = true;
 
-        using (SimpleView view = new SimpleView(win))
+        TestLogic tl = new TestLogic(
+            new Shader(
+                    @"C:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\Tests\TestSimpleWindow1\shader.vert",
+                    @"C:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\Tests\TestSimpleWindow1\shader.frag"
+                ));
+        TestGUI gui = new TestGUI();
+
+        WindowInitSettings win = new WindowInitSettings(tl)
         {
-            view.Run();
+            Size = new Vector2(2000, 1000),
+            Title = "Test 1 WSGraphics",
+            WindowInitState = OpenTK.Windowing.Common.WindowState.Fullscreen
+        };
+        
+
+
+        if (DoGUI)
+        {
+            using (GUIView view = new GUIView(win, gui))
+            {
+                view.Run();
+            }
         }
+        else
+        {
+            using (SimpleView view = new SimpleView(win))
+            {
+                view.Run();
+            }
+        }
+
+        
     }
 
 }

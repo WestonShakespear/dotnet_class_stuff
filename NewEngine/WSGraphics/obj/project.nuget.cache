@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WA7NB6eruvPrxkLoEFckHth98pMzdZCBlPLUaAx1BnXnEMque9+Qrvnpu8vQMraxSNi2kPerZbtvwO5NssXJkQ==",
+  "dgSpecHash": "Q4n27fldofn9ZAKmUXN9mcVms9Z1yCUhgRimGOeWUaFzL1fR3irDGOZCWk5twWF2Ozd2KUVwRg827c/kzQqv8A==",
   "success": true,
   "projectFilePath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Initec\\.nuget\\packages\\imgui.net\\1.89.5\\imgui.net.1.89.5.nupkg.sha512",
     "C:\\Users\\Initec\\.nuget\\packages\\opentk\\4.8.2\\opentk.4.8.2.nupkg.sha512",
     "C:\\Users\\Initec\\.nuget\\packages\\opentk.audio.openal\\4.8.2\\opentk.audio.openal.4.8.2.nupkg.sha512",
     "C:\\Users\\Initec\\.nuget\\packages\\opentk.compute\\4.8.2\\opentk.compute.4.8.2.nupkg.sha512",
@@ -15,6 +16,8 @@
     "C:\\Users\\Initec\\.nuget\\packages\\opentk.windowing.common\\4.8.2\\opentk.windowing.common.4.8.2.nupkg.sha512",
     "C:\\Users\\Initec\\.nuget\\packages\\opentk.windowing.desktop\\4.8.2\\opentk.windowing.desktop.4.8.2.nupkg.sha512",
     "C:\\Users\\Initec\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.8.2\\opentk.windowing.graphicslibraryframework.4.8.2.nupkg.sha512",
+    "C:\\Users\\Initec\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\Initec\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
     "C:\\Users\\Initec\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []

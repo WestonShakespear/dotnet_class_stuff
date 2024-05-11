@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zbCpVAVAV5rWdrTOzcnE4Znj1H0T9H1d3vCfP77lp5LhAZulP4E8TmH8t8OmvvurLsscmL4mj8T3dQCS6MVdAA==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\SeleniumStuff\\SeleniumTest\\SeleniumTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Initec\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Initec\\.nuget\\packages\\selenium.webdriver\\4.20.0\\selenium.webdriver.4.20.0.nupkg.sha512"
+  ],
+  "logs": []
+}

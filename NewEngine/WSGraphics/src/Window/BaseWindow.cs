@@ -5,80 +5,80 @@ using OpenTK.Windowing.GraphicsLibraryFramework;
 
 
 using static WSGraphics.Window.Common;
+using System.Numerics;
 
 namespace WSGraphics.Window;
 
 public class BaseWindow : GameWindow
 {
-    int WindowWidth;
-    int WindowHeight;
+    protected int WindowWidth;
+    protected int WindowHeight;
+    protected Vector4 ClearColor;
 
-    ViewLogic Logic;
+    protected ViewLogic Logic;
+
+    protected WindowState TempWindowState;
 
     public BaseWindow(WindowInitSettings _windowInitSettings) : base(
         GameWindowSettings.Default,
         new NativeWindowSettings()
         {
-            Size = ((int)_windowInitSettings.Size.X, (int)_windowInitSettings.Size.Y),
-            Title = _windowInitSettings.Title
+            ClientSize = new OpenTK.Mathematics.Vector2i((int)_windowInitSettings.Size.X, (int)_windowInitSettings.Size.Y),
+            Title = _windowInitSettings.Title,
+            WindowBorder = WindowBorder.Resizable,
+            StartVisible = true,
+            StartFocused = true,
+            API = ContextAPI.OpenGL,
+            Profile = ContextProfile.Core,
+            APIVersion = new Version(3, 3)
         })
     {
         
         
         WindowHeight = Size.Y;
         WindowWidth = Size.X;
+        ClearColor = _windowInitSettings.ClearColor;
 
         Logic = _windowInitSettings.Logic;
         Logic.Size = new System.Numerics.Vector2(Size.X, Size.Y);
 
-        WindowState = _windowInitSettings.WindowInitState;
-
+        TempWindowState = _windowInitSettings.WindowInitState;
+        VSync = VSyncMode.On;
     }
 
     protected override void OnLoad()
     {
         base.OnLoad();
-        
-        GL.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
-        Logic.OnLoad();
+        GL.ClearColor(ClearColor.X, ClearColor.Y, ClearColor.Z, ClearColor.W);
+        WindowLoad();
+        WindowState = TempWindowState;
     }
 
     protected override void OnRenderFrame(FrameEventArgs args)
     {
         base.OnRenderFrame(args);
-
-        // Clear the screen
-        GL.Clear(ClearBufferMask.ColorBufferBit);
-
-        Logic.OnRenderFrame(args, null, null);
-
-        // Do this last to display the changes
-        Context.SwapBuffers();
+        WindowRenderFrame(args);
     }
 
     protected override void OnUpdateFrame(FrameEventArgs args)
     {
         base.OnUpdateFrame(args);
 
-        KeyboardState key = KeyboardState;
-        MouseState mouse = MouseState;
-
+        if (KeyboardState.IsKeyDown(Keys.Escape)) Close();
+        WindowUpdateFrame(args);
         
-
-        Logic.OnUpdateFrame(args, key, mouse);
     }
     protected override void OnResize(ResizeEventArgs e)
     {
         base.OnResize(e);
-
-        WindowHeight = e.Height;
-        WindowWidth = e.Width;
-
-        // Resize the gl viewport when the window is resized
-        GL.Viewport(0, 0, WindowWidth, WindowHeight);
-        // Logic.Size = new System.Numerics.Vector2(e.Width, e.Height);
-
-        Logic.OnResize(e);
+        WindowResize(e);
     }
+
+
+    protected virtual void WindowLoad() {}
+    protected virtual void WindowRenderFrame(FrameEventArgs args) {}
+    protected virtual void WindowUpdateFrame(FrameEventArgs args) {}
+    protected virtual void WindowResize(ResizeEventArgs e) {}
+    
 }
