@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {}
+    "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
+    "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
+        "projectUniqueName": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
         "projectName": "WSGraphics",
-        "projectPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
-        "packagesPath": "C:\\Users\\Initec\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\obj\\",
+        "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
+        "packagesPath": "C:\\Users\\wes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "D:\\Software\\VS\\SDK\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Initec\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\wes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

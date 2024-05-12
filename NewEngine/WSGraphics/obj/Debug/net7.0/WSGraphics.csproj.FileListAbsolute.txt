@@ -10,3 +10,15 @@ c:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\n
 c:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\refint\WSGraphics.dll
 c:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.pdb
 c:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\ref\WSGraphics.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\bin\Debug\net7.0\WSGraphics.deps.json
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\bin\Debug\net7.0\WSGraphics.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\bin\Debug\net7.0\WSGraphics.pdb
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.csproj.AssemblyReference.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.AssemblyInfoInputs.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.AssemblyInfo.cs
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.csproj.CoreCompileInputs.cache
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\refint\WSGraphics.dll
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\WSGraphics.pdb
+C:\Users\wes\github-repos\dotnet_class_stuff\NewEngine\WSGraphics\obj\Debug\net7.0\ref\WSGraphics.dll

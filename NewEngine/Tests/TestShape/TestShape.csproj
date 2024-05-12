@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\WSGraphics\WSGraphics.csproj" />
+    <PackageReference Include="ImGui.NET" Version="1.89.5" />
+    <PackageReference Include="OpenTK" Version="4.8.2" />
   </ItemGroup>
 
   <PropertyGroup>

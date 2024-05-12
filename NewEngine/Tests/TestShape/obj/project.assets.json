@@ -576,29 +576,31 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "ImGui.NET >= 1.89.5",
+      "OpenTK >= 4.8.2",
       "WSGraphics >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Initec\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\wes\\.nuget\\packages\\": {},
+    "D:\\Software\\VS\\SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
+      "projectUniqueName": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
       "projectName": "TestShape",
-      "projectPath": "C:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
-      "packagesPath": "C:\\Users\\Initec\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\obj\\",
+      "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
+      "packagesPath": "C:\\Users\\wes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "D:\\Software\\VS\\SDK\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Initec\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\wes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -611,8 +613,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
-              "projectPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj"
+            "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
+              "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj"
             }
           }
         }
@@ -626,6 +628,16 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
+        "dependencies": {
+          "ImGui.NET": {
+            "target": "Package",
+            "version": "[1.89.5, )"
+          },
+          "OpenTK": {
+            "target": "Package",
+            "version": "[4.8.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -642,7 +654,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

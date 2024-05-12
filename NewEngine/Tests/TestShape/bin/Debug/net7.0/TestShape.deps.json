@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "TestShape/1.0.0": {
         "dependencies": {
+          "ImGui.NET": "1.89.5",
+          "OpenTK": "4.8.2",
           "WSGraphics": "1.0.0"
         },
         "runtime": {

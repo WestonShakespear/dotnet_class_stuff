@@ -54,7 +54,7 @@ class TestLogic : ViewLogic
     public TestLogic(Shader _shader)
     {
         MyShader = _shader;
-        MainCamera = new Camera(OpenTK.Mathematics.Vector3.UnitZ * StartZ, Size.X / (float)Size.Y);
+        MainCamera = new Camera(OpenTK.Mathematics.Vector3.UnitZ * StartZ, 1.0f);
         
 
         MyTimer = new Stopwatch();

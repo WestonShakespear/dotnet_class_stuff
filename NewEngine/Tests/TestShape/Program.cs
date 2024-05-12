@@ -11,12 +11,14 @@ class Program
 {
     public static void Main(string[] args)
     {
-        bool DoGUI = false;
+        bool DoGUI = true;
+
+        string root = @"C:\Users\wes\github-repos\";
 
         TestLogic tl = new TestLogic(
             new Shader(
-                    @"C:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\Tests\TestShape\cam.vert",
-                    @"C:\Users\Initec\github-repos\dotnet_class_stuff\NewEngine\Tests\TestShape\cam.frag"
+                    Path.Combine(root, @"dotnet_class_stuff\NewEngine\Tests\TestShape\cam.vert"),
+                    Path.Combine(root, @"dotnet_class_stuff\NewEngine\Tests\TestShape\cam.frag")
                 ));
         TestGUI gui = new TestGUI();
 
@@ -24,7 +26,7 @@ class Program
         {
             Size = new Vector2(2000, 1000),
             Title = "Test 1 WSGraphics",
-            WindowInitState = OpenTK.Windowing.Common.WindowState.Fullscreen
+            // WindowInitState = OpenTK.Windowing.Common.WindowState.Fullscreen
         };
         
 
