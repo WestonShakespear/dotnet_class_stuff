@@ -72,6 +72,15 @@ public class TestGUI : BaseGUI
 
         ImGui.SliderFloat("Speed", ref Mod, 0.0f, 1.0f);
         ImGui.SliderFloat("Bias", ref Bias, -0.5f, 0.5f);
+        ImGui.Separator();
+
+        ImGui.SliderFloat("Circ X", ref CircOrigin.X, -1.0f, 1.0f);
+        ImGui.SliderFloat("Circ Y", ref CircOrigin.Y, -1.0f, 1.0f);
+        ImGui.SliderFloat("Circ Z", ref CircOrigin.Z, -1.0f, 1.0f);
+        ImGui.Separator();
+        ImGui.SliderFloat("Size", ref CircSize, 0.0f, 1.0f);
+
+        ImGui.Separator();
 
         ImGui.ColorPicker4("color", ref ColorPicked);
         ImGui.End();

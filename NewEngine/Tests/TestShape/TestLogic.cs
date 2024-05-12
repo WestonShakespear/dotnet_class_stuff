@@ -29,8 +29,9 @@ class TestLogic : ViewLogic
 
     Stopwatch MyTimer;
 
-    Circle Circ = new Circle();
-
+    // Circle Circ = new Circle();
+    public static System.Numerics.Vector3 CircOrigin = new System.Numerics.Vector3(0.0f);
+    List<Shape> Shapes = new List<Shape>();
 
 
 
@@ -86,6 +87,8 @@ class TestLogic : ViewLogic
 
         MyShader.Load();
         MyShader.Use();
+
+        GenCirc(0.0f);
     }
 
     public static float Mod = 0.9f;
@@ -95,29 +98,29 @@ class TestLogic : ViewLogic
     {
         MyShader.Use();
 
-        GL.DeleteVertexArray(VertexArrayObject);
+        // GL.DeleteVertexArray(VertexArrayObject);
 
-        VertexArrayObject = GL.GenVertexArray();
-        GL.BindVertexArray(VertexArrayObject);
+        // VertexArrayObject = GL.GenVertexArray();
+        // GL.BindVertexArray(VertexArrayObject);
 
-        GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferObject);
-        GL.BufferData(BufferTarget.ArrayBuffer, Vertices.Length * sizeof(float), Vertices, BufferUsageHint.StaticDraw);
-        // 3. then set our vertex attributes pointers
-        GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
-        GL.EnableVertexAttribArray(0);
+        // GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferObject);
+        // GL.BufferData(BufferTarget.ArrayBuffer, Vertices.Length * sizeof(float), Vertices, BufferUsageHint.StaticDraw);
+        // // 3. then set our vertex attributes pointers
+        // GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
+        // GL.EnableVertexAttribArray(0);
 
-        double timeValue = MyTimer.Elapsed.TotalMilliseconds / (2000 * (1.01-Mod));
-        float mod = (float)Math.Sin(timeValue) / 2.0f + (0.5f + Bias);
+        // double timeValue = MyTimer.Elapsed.TotalMilliseconds / (2000 * (1.01-Mod));
+        // float mod = (float)Math.Sin(timeValue) / 2.0f + (0.5f + Bias);
 
-        int vertexColorLocation = GL.GetUniformLocation(MyShader.Handle, "vertexColor");
-                GL.Uniform4(vertexColorLocation, 
-                    ColorPicked.X * mod,
-                    ColorPicked.Y * mod,
-                    ColorPicked.Z * mod,
-                    ColorPicked.W * mod);
+        // int vertexColorLocation = GL.GetUniformLocation(MyShader.Handle, "vertexColor");
+        //         GL.Uniform4(vertexColorLocation, 
+        //             ColorPicked.X * mod,
+        //             ColorPicked.Y * mod,
+        //             ColorPicked.Z * mod,
+        //             ColorPicked.W * mod);
 
-        GL.BindVertexArray(VertexArrayObject);
-        GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
+        // GL.BindVertexArray(VertexArrayObject);
+        // GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
 
 
         MainCamera.AspectRatio = Size.X / (float)Size.Y;
@@ -139,10 +142,69 @@ class TestLogic : ViewLogic
         // Console.WriteLine("Projection");
         // Console.WriteLine(MainCamera.GetProjectionMatrix());
 
+        double timeValue = MyTimer.Elapsed.TotalMilliseconds;
 
-        Circ.Draw(force:true);
-        Circ.Render(MyShader.Handle);
+        if (timeValue - lastTime > between)
+        {
+            lastTime = timeValue;
 
+            // Shapes = new List<Shape>();
+            // GenCirc(time += (float)between * Mod);
+
+        }
+        
+        
+
+            foreach (Shape shape in Shapes)
+            {
+                shape.Draw(force:true);
+                shape.Render(MyShader.Handle);
+            }
+        
+
+    }
+
+
+
+    double lastTime = 0.0f;
+    double between = 10.0f;
+
+    float time = 0.0f;
+
+    public static float CircSize = 0.01f;
+
+    private void GenCirc(float _time)
+    {
+ 
+
+        float m = 10.0f;
+
+        float inc = 0.0001f;
+
+        float mult = 10.0f;
+        float add = _time;
+
+        float golden = (float)(1 + Math.Pow(5, 0.5f));
+
+        for (float t = 0.0f; t < m; t+=inc)
+        {
+            float x = (float)(Math.Sin(t * mult + add) * Math.Pow(golden, t / Math.PI));
+            float y = (float)(Math.Cos(t * mult + add) * Math.Pow(golden, t / Math.PI));
+            float z = (t / m) * (m / 2);
+
+            x /= m;
+            y /= m;
+            z /= m;
+
+            Circle circ = new Circle(new System.Numerics.Vector3(x, y, z), CircSize, _segments:64);
+            // circ.Wireframe = true;
+            circ.SetColor(ColorPicked);
+
+            Shapes.Add(circ);
+        }
+
+  
+    
     }
 
 

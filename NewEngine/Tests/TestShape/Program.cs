@@ -26,7 +26,7 @@ class Program
         {
             Size = new Vector2(2000, 1000),
             Title = "Test 1 WSGraphics",
-            // WindowInitState = OpenTK.Windowing.Common.WindowState.Fullscreen
+            WindowInitState = OpenTK.Windowing.Common.WindowState.Fullscreen
         };
         
 
