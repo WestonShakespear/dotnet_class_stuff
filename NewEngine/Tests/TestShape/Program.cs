@@ -13,7 +13,7 @@ class Program
     {
         bool DoGUI = true;
 
-        string root = @"C:\Users\wes\github-repos\";
+        string root = @"C:\Users\Initec\github-repos\";
 
         TestLogic tl = new TestLogic(
             new Shader(
@@ -26,7 +26,7 @@ class Program
         {
             Size = new Vector2(2000, 1000),
             Title = "Test 1 WSGraphics",
-            WindowInitState = OpenTK.Windowing.Common.WindowState.Fullscreen
+            WindowInitState = OpenTK.Windowing.Common.WindowState.Maximized
         };
         
 

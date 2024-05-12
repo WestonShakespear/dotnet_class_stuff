@@ -43,7 +43,7 @@ public class BaseWindow : GameWindow
         Logic.Size = new System.Numerics.Vector2(Size.X, Size.Y);
 
         TempWindowState = _windowInitSettings.WindowInitState;
-        // VSync = VSyncMode.On;
+        VSync = VSyncMode.On;
     }
 
     protected override void OnLoad()

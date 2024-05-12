@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj": {}
+    "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj": {
+    "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
+        "projectUniqueName": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
         "projectName": "TestShape",
-        "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
-        "packagesPath": "C:\\Users\\wes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\obj\\",
+        "projectPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\TestShape.csproj",
+        "packagesPath": "C:\\Users\\Initec\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\Tests\\TestShape\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Software\\VS\\SDK\\NuGetPackages"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\wes\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Initec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -32,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
-                "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj"
+              "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
+                "projectPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj"
               }
             }
           }
@@ -73,26 +73,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
+    "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
+        "projectUniqueName": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
         "projectName": "WSGraphics",
-        "projectPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
-        "packagesPath": "C:\\Users\\wes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wes\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\obj\\",
+        "projectPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\WSGraphics.csproj",
+        "packagesPath": "C:\\Users\\Initec\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Initec\\github-repos\\dotnet_class_stuff\\NewEngine\\WSGraphics\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Software\\VS\\SDK\\NuGetPackages"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\wes\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Initec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -142,7 +142,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

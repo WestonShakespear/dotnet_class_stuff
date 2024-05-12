@@ -43,27 +43,38 @@ public class Shape
 
             // Console.WriteLine();
             
+            if (!Drawn)
+            {
+                VertexArrayObject = GL.GenVertexArray();
+                
 
-            VertexArrayObject = GL.GenVertexArray();
-            GL.BindVertexArray(VertexArrayObject);
+                // Create and bind buffer for vertex data
+                VertexDataBufferObject = GL.GenBuffer();
 
-            // Create and bind buffer for vertex data
-            VertexDataBufferObject = GL.GenBuffer();
-            GL.BindBuffer(BufferTarget.ArrayBuffer, VertexDataBufferObject);
+                ElementBufferObject = GL.GenBuffer();
+
+                GL.BindVertexArray(VertexArrayObject);
+                GL.BindBuffer(BufferTarget.ArrayBuffer, VertexDataBufferObject);
+                GL.BindBuffer(BufferTarget.ElementArrayBuffer, ElementBufferObject);
+                
+            }
+
+            
+            
 
             // Now that it's bound, load with data
             GL.BufferData(
                 BufferTarget.ArrayBuffer,
                 Vertices.Length * sizeof(float),
                 Vertices,
-                BufferUsageHint.StaticDraw);
+                BufferUsageHint.DynamicDraw);
 
             GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
             GL.EnableVertexAttribArray(0);
 
-            ElementBufferObject = GL.GenBuffer();
-            GL.BindBuffer(BufferTarget.ElementArrayBuffer, ElementBufferObject);
-            GL.BufferData(BufferTarget.ElementArrayBuffer, Triangles.Length * sizeof(uint), Triangles, BufferUsageHint.StaticDraw);
+            
+            
+            GL.BufferData(BufferTarget.ElementArrayBuffer, Triangles.Length * sizeof(uint), Triangles, BufferUsageHint.DynamicDraw);
 
             Drawn = true;
         } else { Console.WriteLine("nulll"); }
@@ -87,6 +98,13 @@ public class Shape
 
         GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
 
+    }
+
+    public void Dispose()
+    {
+        GL.DeleteVertexArray(VertexArrayObject);
+        GL.DeleteBuffer(VertexDataBufferObject);
+        GL.DeleteBuffer(ElementBufferObject);
     }
 
     public Vector4 GetColor()

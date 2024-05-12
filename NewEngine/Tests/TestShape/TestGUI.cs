@@ -78,10 +78,13 @@ public class TestGUI : BaseGUI
         ImGui.SliderFloat("Circ Y", ref CircOrigin.Y, -1.0f, 1.0f);
         ImGui.SliderFloat("Circ Z", ref CircOrigin.Z, -1.0f, 1.0f);
         ImGui.Separator();
-        ImGui.SliderFloat("Size", ref CircSize, 0.0f, 1.0f);
+        ImGui.SliderFloat("Size", ref CircSize, 0.0f, 0.1f);
 
         ImGui.Separator();
+        ImGui.SliderFloat("Mult", ref mult, 0.0f, 100.0f);
+        ImGui.SliderFloat("mMult", ref mMult, 0.0f, 1.0f);
 
+        ImGui.Separator();
         ImGui.ColorPicker4("color", ref ColorPicked);
         ImGui.End();
     }
@@ -95,6 +98,14 @@ public class TestGUI : BaseGUI
         ImGui.Text("G: " + ColorPicked.Y.ToString());
         ImGui.Text("B: " + ColorPicked.Z.ToString());
         ImGui.Text("A: " + ColorPicked.W.ToString());
+        ImGui.Separator();
+
+        ImGui.Text("ObjectsRendered: " + ObjectsRendered.ToString());
+        ImGui.Separator();
+
+        ImGui.Text("Render Processing (ms): " + RenderProcessing.ToString());
+        ImGui.Separator();
+
         ImGui.End();
     }
 

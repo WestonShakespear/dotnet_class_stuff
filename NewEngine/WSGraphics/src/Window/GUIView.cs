@@ -59,7 +59,7 @@ public class GUIView : BaseWindow
         // Do this last to display the changes
         Context.SwapBuffers();
 
-        Console.WriteLine("{0}\tx\t{1}\t\t{2}\tx\t{3}", WindowWidth, WindowHeight, CamWidth, CamHeight);
+        // Console.WriteLine("{0}\tx\t{1}\t\t{2}\tx\t{3}", WindowWidth, WindowHeight, CamWidth, CamHeight);
     }
 
     protected override void WindowUpdateFrame(FrameEventArgs args)

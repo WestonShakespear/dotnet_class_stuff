@@ -5,6 +5,7 @@ using OpenTK.Windowing.Desktop;
 using WSGraphics.Window;
 using OpenTK.Mathematics;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 using WSGraphics.Graphics;
 using WSGraphics.Graphics.Geometry;
@@ -28,10 +29,11 @@ class TestLogic : ViewLogic
     private Shader MyShader;
 
     Stopwatch MyTimer;
+    Stopwatch RenderTimer;
 
     // Circle Circ = new Circle();
     public static System.Numerics.Vector3 CircOrigin = new System.Numerics.Vector3(0.0f);
-    List<Shape> Shapes = new List<Shape>();
+    static List<Shape> Shapes = new List<Shape>();
 
 
 
@@ -60,6 +62,8 @@ class TestLogic : ViewLogic
 
         MyTimer = new Stopwatch();
         MyTimer.Start();
+
+        RenderTimer = new Stopwatch();
     }
 
     public override void DoLoad()
@@ -88,14 +92,17 @@ class TestLogic : ViewLogic
         MyShader.Load();
         MyShader.Use();
 
-        GenCirc(0.0f);
+        GenCirc(ref ShapesBuffer);
+        CopyShapesBuffer();
     }
 
-    public static float Mod = 0.9f;
+    public static float Mod = 0.61f;
     public static float Bias = -0.23f;
 
     public override void DoRenderFrame(FrameEventArgs args, Camera? camera, Vector2? modelRotation)
     {
+        RenderTimer.Restart();
+        RenderTimer.Start();
         MyShader.Use();
 
         // GL.DeleteVertexArray(VertexArrayObject);
@@ -142,27 +149,82 @@ class TestLogic : ViewLogic
         // Console.WriteLine("Projection");
         // Console.WriteLine(MainCamera.GetProjectionMatrix());
 
-        double timeValue = MyTimer.Elapsed.TotalMilliseconds;
+        // double timeValue = MyTimer.Elapsed.TotalMilliseconds;
 
-        if (timeValue - lastTime > between)
+        // if (timeValue - lastTime > between)
+        // {
+        //     lastTime = timeValue;
+
+        
+        
+  
+        if (!CircRunning)
         {
-            lastTime = timeValue;
+            // Console.WriteLine("**Start thread");
+            _time = time += (float)between * Mod;
+            CircThread = new Thread(() => GenCirc(ref ShapesBuffer));
+            CircRunning = true;
+            CircThread.Start();
+        }
+        else
+        {
+            if (CircThread.IsAlive)
+            {
+                // Console.WriteLine("**Thread running");
+            }
+            else
+            {
+                // Console.WriteLine("**Thread finished");
 
-            // Shapes = new List<Shape>();
-            // GenCirc(time += (float)between * Mod);
+                CircRunning = false;
+            }
+        }
 
+        if (ShapeBufferFilled && !CircRunning)
+        {
+            // Console.WriteLine("**Copy shapes");
+            ShapeBufferFilled = false;
+            CopyShapesBuffer();
         }
         
+
         
 
-            foreach (Shape shape in Shapes)
-            {
-                shape.Draw(force:true);
-                shape.Render(MyShader.Handle);
-            }
+
+        
+            
+
+            
+
+        // }
+        
+        
+        // Console.WriteLine("**Render");
+      
+        foreach (Shape shape in Shapes)
+        {
+           
+            shape.Render(MyShader.Handle);
+        }
+        ObjectsRendered = Shapes.Count;
+        
+
+        RenderTimer.Stop();
+        
+        avgTime.Enqueue(RenderTimer.ElapsedMilliseconds);
+
+        if (avgTime.Count > 100)
+        {
+            avgTime.Dequeue();
+        }
+
+        RenderProcessing = avgTime.Sum() / (float)avgTime.Count;
         
 
     }
+
+    public static int ObjectsRendered = 0;
+    public static float RenderProcessing = 0.0f;
 
 
 
@@ -171,26 +233,41 @@ class TestLogic : ViewLogic
 
     float time = 0.0f;
 
-    public static float CircSize = 0.01f;
+    public static float CircSize = 0.001f;
 
-    private void GenCirc(float _time)
+
+    static List<Shape> ShapesBuffer = new List<Shape>();
+    static bool ShapeBufferFilled = false;
+    static bool CircRunning = false;
+    Thread CircThread = new Thread(() => GenCirc(ref ShapesBuffer));
+
+    static float _time = 0.0f;
+    public static float mult = 92.0f;
+    public static float mMult = 0.0f;
+
+    private static void GenCirc(ref List<Shape> _shapesBuffer)
     {
- 
+        ShapeBufferFilled = false;
+        _shapesBuffer = new List<Shape>();
 
         float m = 10.0f;
 
-        float inc = 0.0001f;
+        float inc = 0.01f;
 
-        float mult = 10.0f;
+        
         float add = _time;
 
         float golden = (float)(1 + Math.Pow(5, 0.5f));
 
+
+        System.Numerics.Vector3 lastPosition = new System.Numerics.Vector3(0.0f);
+
         for (float t = 0.0f; t < m; t+=inc)
+        // Parallel.For(0.0f, m, t =>
         {
-            float x = (float)(Math.Sin(t * mult + add) * Math.Pow(golden, t / Math.PI));
-            float y = (float)(Math.Cos(t * mult + add) * Math.Pow(golden, t / Math.PI));
-            float z = (t / m) * (m / 2);
+            float x = (float)(Math.Sin(t * (mult-mult*Math.Sin(_time*mMult)) + add) * Math.Pow(golden, t / Math.PI));
+            float y = (float)(Math.Cos(t * (mult-mult*Math.Sin(_time*mMult)) + add) * Math.Pow(golden, t / Math.PI));
+            float z = -0.5f + t  / m * m;
 
             x /= m;
             y /= m;
@@ -199,13 +276,47 @@ class TestLogic : ViewLogic
             Circle circ = new Circle(new System.Numerics.Vector3(x, y, z), CircSize, _segments:64);
             // circ.Wireframe = true;
             circ.SetColor(ColorPicked);
+            // circ.Draw(force:true);
 
-            Shapes.Add(circ);
+            _shapesBuffer.Add(circ);
+
+
+            if (t > 0.0f)
+            {
+                Line lin = new Line(System.Numerics.Vector3.Zero, lastPosition, new System.Numerics.Vector3(x, y, z), CircSize);
+                lin.SetColor(ColorPicked);
+                // lin.Draw(force:true);
+
+                _shapesBuffer.Add(lin);
+            }
+            lastPosition.X = x;
+            lastPosition.Y = y;
+            lastPosition.Z = z;
+        }
+        ShapeBufferFilled = true;
+
+    }
+
+    private static void CopyShapesBuffer()
+    {
+        foreach (Shape shape in Shapes)
+        // Parallel.For(0, Shapes.Count, i =>
+        {
+            shape.Dispose();
         }
 
-  
-    
+        Shapes = new List<Shape>();
+
+        foreach (Shape shape in ShapesBuffer)
+        // Parallel.For(0, ShapesBuffer.Count, i =>
+        {
+            shape.Draw(force:true);
+            Shapes.Add(shape);
+        }
+        ShapesBuffer = new List<Shape>();
     }
+
+    Queue<float> avgTime = new Queue<float>();
 
 
 
